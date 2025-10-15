@@ -1,0 +1,21 @@
+{
+  "apiVersion": 2,
+  "name": "wishlist-block/wishlist",
+  "title": "Wishlist",
+  "category": "widgets",
+  "icon": "heart",
+  "description": "Display and manage customer wishlists.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "wishlist-block",
+  "editorScript": "wlb-block-editor",
+  "editorStyle": "wlb-block-editor",
+  "style": "wlb-block-frontend",
+  "attributes": {
+    "showToolbar": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

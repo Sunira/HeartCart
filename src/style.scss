@@ -1,0 +1,20 @@
+.wlb-wishlist,
+.wlb-grid {
+display: grid;
+gap: 1.5rem;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.wlb-wishlist__item,
+.wlb-grid__item {
+border: 1px solid #dcdcde;
+border-radius: 8px;
+padding: 1rem;
+background: #fff;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.wlb-wishlist--empty {
+font-style: italic;
+color: #646970;
+}
