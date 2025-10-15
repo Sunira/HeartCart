@@ -1,0 +1,19 @@
+{
+  "name": "wishlist-block",
+  "version": "1.0.0",
+  "description": "Wishlist Block plugin assets",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "test:js": "jest",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.23.3",
+    "@playwright/test": "^1.40.0",
+    "@wordpress/scripts": "^25.1.0",
+    "babel-jest": "^29.0.0",
+    "jest": "^29.0.0"
+  }
+}
