@@ -1,0 +1,290 @@
+.heartcart-wishlist {
+--heartcart-surface: #ffffff;
+--heartcart-surface-elevated: rgba(255, 255, 255, 0.92);
+--heartcart-text: #0f172a;
+--heartcart-muted: #64748b;
+--heartcart-border: #e2e8f0;
+--heartcart-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+--heartcart-accent: #e11d48;
+--heartcart-radius: 16px;
+color: var(--heartcart-text);
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.heartcart-wishlist-grid {
+display: grid;
+gap: 1.75rem;
+}
+
+.heartcart-wishlist--columns-1 .heartcart-wishlist-grid {
+grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.heartcart-wishlist--columns-2 .heartcart-wishlist-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.heartcart-wishlist--columns-3 .heartcart-wishlist-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.heartcart-wishlist--columns-4 .heartcart-wishlist-grid {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1200px) {
+.heartcart-wishlist--columns-4 .heartcart-wishlist-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 960px) {
+.heartcart-wishlist--columns-3 .heartcart-wishlist-grid,
+.heartcart-wishlist--columns-4 .heartcart-wishlist-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 720px) {
+.heartcart-wishlist--columns-2 .heartcart-wishlist-grid,
+.heartcart-wishlist--columns-3 .heartcart-wishlist-grid,
+.heartcart-wishlist--columns-4 .heartcart-wishlist-grid {
+grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+}
+
+.heartcart-wishlist-card {
+background: var(--heartcart-surface);
+border: 1px solid var(--heartcart-border);
+border-radius: var(--heartcart-radius);
+box-shadow: var(--heartcart-shadow);
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+position: relative;
+isolation: isolate;
+}
+
+.heartcart-wishlist-card__link {
+color: inherit;
+display: flex;
+flex-direction: column;
+height: 100%;
+text-decoration: none;
+}
+
+.heartcart-wishlist-card__image img {
+display: block;
+height: 240px;
+object-fit: cover;
+width: 100%;
+}
+
+.heartcart-wishlist-card__content {
+padding: 1.5rem;
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.heartcart-wishlist-card__title {
+font-size: 1.25rem;
+font-weight: 700;
+margin: 0;
+}
+
+.heartcart-wishlist-card__price {
+color: var(--heartcart-accent);
+font-weight: 600;
+}
+
+.heartcart-wishlist-card__priority {
+align-self: flex-start;
+background: rgba(225, 29, 72, 0.08);
+border-radius: 999px;
+color: var(--heartcart-accent);
+font-size: 0.75rem;
+font-weight: 600;
+letter-spacing: 0.04em;
+padding: 0.35rem 0.8rem;
+text-transform: uppercase;
+}
+
+.heartcart-wishlist-card__priority--medium {
+background: rgba(14, 165, 233, 0.12);
+color: #0369a1;
+}
+
+.heartcart-wishlist-card__priority--low {
+background: rgba(34, 197, 94, 0.12);
+color: #047857;
+}
+
+.heartcart-wishlist-card__excerpt {
+color: var(--heartcart-muted);
+margin: 0;
+}
+
+.heartcart-wishlist-card__cta {
+margin-top: auto;
+align-self: flex-start;
+background: rgba(15, 23, 42, 0.04);
+border-radius: 999px;
+color: var(--heartcart-text);
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+padding: 0.4rem 0.9rem;
+text-transform: uppercase;
+}
+
+.heartcart-wishlist-card:hover,
+.heartcart-wishlist-card:focus-within {
+transform: translateY(-6px);
+box-shadow: 0 24px 48px rgba(15, 23, 42, 0.18);
+}
+
+/* Modal styles */
+.heartcart-wishlist-modal {
+align-items: center;
+background: rgba(15, 23, 42, 0.65);
+display: none;
+height: 100%;
+inset: 0;
+justify-content: center;
+padding: 1.5rem;
+position: fixed;
+z-index: 999;
+}
+
+.heartcart-wishlist-modal:target {
+display: flex;
+}
+
+.heartcart-wishlist-modal__overlay {
+background: transparent;
+height: 100%;
+inset: 0;
+position: absolute;
+width: 100%;
+}
+
+.heartcart-wishlist-modal__dialog {
+background: var(--heartcart-surface-elevated);
+border-radius: calc(var(--heartcart-radius) + 4px);
+box-shadow: 0 32px 60px rgba(15, 23, 42, 0.35);
+max-width: 720px;
+position: relative;
+width: min(100%, 720px);
+overflow: hidden;
+}
+
+.heartcart-wishlist-modal__close {
+position: absolute;
+top: 1rem;
+right: 1rem;
+background: rgba(15, 23, 42, 0.65);
+border-radius: 50%;
+color: #fff;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+height: 2.5rem;
+width: 2.5rem;
+font-size: 1.5rem;
+text-decoration: none;
+transition: background 0.2s ease;
+z-index: 2;
+}
+
+.heartcart-wishlist-modal__close:hover,
+.heartcart-wishlist-modal__close:focus {
+background: rgba(225, 29, 72, 0.85);
+}
+
+.heartcart-wishlist-modal__image img {
+display: block;
+height: 320px;
+object-fit: cover;
+width: 100%;
+}
+
+.heartcart-wishlist-modal__content {
+padding: 2rem;
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.heartcart-wishlist-modal__title {
+font-size: 1.5rem;
+margin: 0;
+}
+
+.heartcart-wishlist-modal__price {
+color: var(--heartcart-accent);
+font-weight: 600;
+}
+
+.heartcart-wishlist-modal__priority {
+align-self: flex-start;
+border-radius: 999px;
+font-size: 0.75rem;
+font-weight: 600;
+letter-spacing: 0.06em;
+padding: 0.35rem 0.9rem;
+text-transform: uppercase;
+}
+
+.heartcart-wishlist-modal__priority--medium {
+background: rgba(14, 165, 233, 0.12);
+color: #0369a1;
+}
+
+.heartcart-wishlist-modal__priority--low {
+background: rgba(34, 197, 94, 0.12);
+color: #047857;
+}
+
+.heartcart-wishlist-modal__description {
+color: var(--heartcart-muted);
+display: grid;
+gap: 0.75rem;
+margin: 0;
+}
+
+.heartcart-wishlist-modal__button {
+align-self: flex-start;
+background: var(--heartcart-accent);
+border-radius: 999px;
+color: #fff;
+display: inline-flex;
+font-weight: 600;
+letter-spacing: 0.04em;
+padding: 0.65rem 1.5rem;
+text-decoration: none;
+text-transform: uppercase;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.heartcart-wishlist-modal__button:hover,
+.heartcart-wishlist-modal__button:focus {
+box-shadow: 0 12px 24px rgba(225, 29, 72, 0.4);
+transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+.heartcart-wishlist-modal__image img {
+height: 220px;
+}
+
+.heartcart-wishlist-modal__content {
+padding: 1.5rem;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.heartcart-wishlist-card,
+.heartcart-wishlist-modal__button {
+transition: none;
+}
+}

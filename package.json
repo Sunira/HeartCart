@@ -1,0 +1,16 @@
+{
+  "name": "heartcart",
+  "version": "1.0.0",
+  "description": "A Gutenberg block for showcasing wishlist items with modal details.",
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^26.15.0"
+  }
+}
